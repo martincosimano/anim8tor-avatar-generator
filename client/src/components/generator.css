@@ -1,11 +1,48 @@
-img {
+.generator--container {
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.generator--container * {
+    margin-block: 0.3rem;
+}
+
+.form--buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.avatar--image {
     width: 15.625rem;
     height: 15.625rem;
     opacity: 0.95;
 }
 
-.generator--container {
-    display: flex;
-    justify-content: center;
-    padding-top: 5rem;
+.avatarName--input {
+    color: rgb(56, 56, 56);
+    font-size: 1rem;
+    margin-inline: 0.4rem;
+    padding-inline: 0.5rem;
+    width: 15.625rem;
+    text-align: center;
+    padding-block: 0.5rem;
+}
+
+.heart--button {
+    color: #ED4956;
+    font-size: 1.1rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 50%;
+}
+
+.heart--button:hover {
+    cursor: pointer;
+}
+
+.fa-heart {
+    text-shadow: 1px 1px 1px black;
 }
