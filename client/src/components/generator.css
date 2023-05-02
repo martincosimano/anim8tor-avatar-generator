@@ -1,0 +1,11 @@
+img {
+    width: 15.625rem;
+    height: 15.625rem;
+    opacity: 0.95;
+}
+
+.generator--container {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}

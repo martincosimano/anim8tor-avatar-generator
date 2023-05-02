@@ -1,8 +1,12 @@
 import React from 'react';
-import './App.css';
+import Header from './components/Header'
+import Generator from './components/Generator'
 
 export default function App() {
   return (
-    <main>Animated Avatar App</main>
+    <main className="main--container">
+      <Header />
+      <Generator />
+    </main>
   )
 }

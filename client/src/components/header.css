@@ -1,0 +1,13 @@
+header {
+    background-color: #9061F9;
+    padding-block: 0.03rem;
+    opacity: 0.9;
+}
+
+.title {
+    color: #FBF3EF;
+    text-align: center;
+    text-shadow: 0.188rem 0.188rem 0.125rem black;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+}
