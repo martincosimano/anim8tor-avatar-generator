@@ -7,6 +7,16 @@ export default function Generator(props) {
         avatarName: "",
     })
 
+    const [avatarSrc, setAvatarSrc] = React.useState('')
+
+    React.useEffect(() => {
+        async function getAvatar() {
+            const res = await fetch(`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`)
+            setAvatarSrc(res.url)
+          }
+          getAvatar()
+        }, [avatar])
+
     function generateAvatar(event) {
         const {name, value} = event.target
         setAvatar(prevAvatar => ({
@@ -17,7 +27,7 @@ export default function Generator(props) {
 
     return (
         <div className="generator--container">
-            <img alt="question mark" src={require("../images/questionmark.png")} className="avatar--image"></img>
+            <img alt=" " src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
                 <form>
                     <input className="avatarName--input"
                            type="text"
