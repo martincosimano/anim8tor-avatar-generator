@@ -7,15 +7,25 @@ export default function Generator(props) {
         avatarName: "",
     })
 
-    const [avatarSrc, setAvatarSrc] = React.useState('')
+    const [avatarSrc, setAvatarSrc] = React.useState('');
 
+    const cachedAvatarUrls = React.useRef({});
+    
     React.useEffect(() => {
-        async function getAvatar() {
-            const res = await fetch(`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`)
-            setAvatarSrc(res.url)
-          }
-          getAvatar()
-        }, [avatar])
+      if (avatar.avatarName) {
+        if (cachedAvatarUrls.current[avatar.avatarName]) {
+          setAvatarSrc(cachedAvatarUrls.current[avatar.avatarName]);
+        } else {
+          fetch(`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`)
+            .then(res => res.url)
+            .then(url => {
+              cachedAvatarUrls.current[avatar.avatarName] = url;
+              setAvatarSrc(url);
+            })
+            .catch(error => console.error(error));
+        }
+      }
+    }, [avatar.avatarName]);
 
     function generateAvatar(event) {
         const {name, value} = event.target

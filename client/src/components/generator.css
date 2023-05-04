@@ -19,12 +19,13 @@
     width: 15.625rem;
     height: 15.625rem;
     opacity: 0.95;
+    margin-bottom: 1rem;
 }
 
 .avatarName--input {
     color: rgb(56, 56, 56);
     font-size: 1rem;
-    margin-inline: 0.4rem;
+    margin-inline: 2rem;
     padding-inline: 0.5rem;
     width: 15.625rem;
     text-align: center;

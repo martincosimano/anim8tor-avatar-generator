@@ -1,0 +1,42 @@
+.list {
+    padding-bottom: 8rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.list--title {
+    text-align: center;
+}
+
+ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.list--avatar {
+    text-align: center;
+    list-style: none;
+}
+
+.list--container {
+    border: 2px solid rgb(102, 102, 102);
+    background-color: rgb(221, 221, 221);
+    box-shadow: 12px 12px 2px 1px rgb(199, 199, 199);
+    width: 28rem;
+    opacity: 0.9;
+    border-radius: 0.5rem;
+    margin-inline: 2rem;
+}
+
+.avatar-info {
+    padding-bottom: 0;
+    border-bottom: 1px solid rgb(102, 102, 102);
+}
+
+.avatar--p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
