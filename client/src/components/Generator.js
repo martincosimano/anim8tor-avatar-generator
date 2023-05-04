@@ -23,12 +23,27 @@ export default function Generator(props) {
             ...avatar,
             [name]: value
         }))
-    }
+    };
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        fetch('/addAvatar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ avatarName: avatar.avatarName}),
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.error(err));
+    };
+
 
     return (
         <div className="generator--container">
             <img alt=" " src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input className="avatarName--input"
                            type="text"
                            placeholder="Type Something"
