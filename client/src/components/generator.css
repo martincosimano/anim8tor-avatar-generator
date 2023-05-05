@@ -38,6 +38,7 @@
     padding-inline: 1rem;
     padding-block: 0.5rem;
     border-radius: 50%;
+    margin-top: 1rem;
 }
 
 .heart--button:hover {

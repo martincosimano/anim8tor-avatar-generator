@@ -10,15 +10,14 @@ const getAllAvatars = async(req,res) => {
     }
 };
 
-const postAvatar = async(req, res) => {
+const addAvatar = async(req, res) => {
     const { avatarName } = req.body;
     try {
         const avatar = new Avatar({ avatarName, likes: 0 });
         await avatar.save();
-        res.status(200).send('Avatar saved successfully');
+        res.status(200).json({ message: 'Avatar saved successfully' });
     } catch (error) {
         res.status(500).send(error);
     }
 };
-
-module.exports = { getAllAvatars, postAvatar }
+module.exports = { getAllAvatars, addAvatar }

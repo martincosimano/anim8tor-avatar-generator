@@ -33,38 +33,45 @@ export default function Generator(props) {
             ...avatar,
             [name]: value
         }))
-    };
+    }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        fetch('/addAvatar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ avatarName: avatar.avatarName}),
-        })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.error(err));
-    };
+  async function handleSubmit(event) {
+    event.preventDefault();
+    try {
+      const res = await fetch('/addAvatar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ avatarName: avatar.avatarName }),
+      })
+      const data = await res.json()
+      console.log(data)
+      props.onIncrement()
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
+  function handleIncrement() {
+      props.onIncrement();
+  }
 
-    return (
-        <div className="generator--container">
-            <img alt=" " src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
-                <form onSubmit={handleSubmit}>
-                    <input className="avatarName--input"
-                           type="text"
-                           placeholder="Type Something"
-                           name="avatarName"
-                           value={avatar.avatarName}
-                           onChange={generateAvatar}
-                    />
-                    <div className="form--buttons">
-                        <button className="heart--button"><i className="fa-solid fa-heart"></i></button>
-                    </div>
-                </form>
-        </div>
-    )
+  return (
+      <div className="generator--container">
+          <img alt=" " src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
+              <form onSubmit={handleSubmit}>
+                  <input className="avatarName--input"
+                          type="text"
+                          placeholder="Type Something"
+                          name="avatarName"
+                          value={avatar.avatarName}
+                          onChange={generateAvatar}
+                  />
+                  <div className="form--buttons">
+                      <button onClick={handleIncrement} className="heart--button"><i className="fa-solid fa-heart"></i></button>
+                  </div>
+              </form>
+      </div>
+  )
 }
