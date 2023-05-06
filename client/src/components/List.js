@@ -13,14 +13,51 @@ export default function List(props) {
     getAvatar();
   }, [props.count]);
 
-  console.log(props.count)
+  const handleLike = async(id) => {
+    try {
+      const res = await fetch(`/likeAvatar/${id}`, {
+        method: "PUT",
+      });
+      const updatedAvatar = await res.json();
+      setAvatar((prevAvatar) =>
+        prevAvatar.map((avatar) =>
+          avatar._id === id ? { ...avatar, likes: updatedAvatar.likes } : avatar
+        )
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleDelete = async(id) => {
+    try {
+      const res = await fetch(`/deleteAvatar/${id}` , {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        setAvatar(avatar.filter((avatar) => avatar._id !== id));
+      } else {
+        console.error(res.statusText);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
 
   const avatarElement = avatar.map((avatar) => (
     <p className="avatar--p" key={avatar._id}>
-      <span>{avatar.avatarName}</span>
-      <span>{avatar.likes}</span>
-      <span><button><i className="fa-regular fa-thumbs-up"></i></button></span>
-      <span><button><i className="fa-solid fa-trash"></i></button></span>
+      <a href={avatar.avatarSrc}><img className="avatar--icon" src={avatar.avatarSrc} alt="avatar icon" /></a>
+      <span className="avatar--name">{avatar.avatarName}</span>
+      <span className="avatar--likes">{avatar.likes}</span>
+      <span className="avatar--buttons">
+        <button onClick={() => handleLike(avatar._id)}>
+          <i id="likes" className="fa-regular fa-thumbs-up"></i>
+        </button>
+        <button onClick={() => handleDelete(avatar._id)}>
+          <i id="trash" className="fa-solid fa-trash"></i>
+        </button>
+      </span>
     </p>
   ));
 

@@ -25,16 +25,11 @@ ul {
     border: 2px solid rgb(102, 102, 102);
     background-color: rgb(221, 221, 221);
     box-shadow: 12px 12px 2px 1px rgb(199, 199, 199);
+    min-height: 12.5rem;
     width: 28rem;
     opacity: 0.9;
     border-radius: 0.5rem;
     margin-inline: 2rem;
-}
-
-.avatar--p {
-    border-bottom: 1px solid rgb(102, 102, 102);
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 .fa-thumbs-up {
@@ -43,4 +38,34 @@ ul {
 
 button:hover {
     cursor: pointer;
+}
+
+
+.avatar--p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(102, 102, 102);
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    padding-inline: 1rem;
+}
+  
+.avatar--name {
+    flex: 1;
+    width: 100%;
+}
+  
+.avatar--likes {
+    width: 30px;
+  }
+  
+.avatar--buttons {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.avatar--icon {
+    width: 35px;
+    margin-left: 2.5rem;
 }

@@ -35,23 +35,26 @@ export default function Generator(props) {
         }))
     }
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    try {
-      const res = await fetch('/addAvatar', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ avatarName: avatar.avatarName }),
-      })
-      const data = await res.json()
-      console.log(data)
-      props.onIncrement()
-    } catch (error) {
-      console.error(error)
+    async function handleSubmit(event) {
+      event.preventDefault();
+      try {
+        const res = await fetch('/addAvatar', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ 
+            avatarName: avatar.avatarName,
+            avatarSrc: avatarSrc 
+          }),
+        })
+        const data = await res.json()
+        console.log(data)
+        props.onIncrement()
+      } catch (error) {
+        console.error(error)
+      }
     }
-  }
 
   function handleIncrement() {
       props.onIncrement();
