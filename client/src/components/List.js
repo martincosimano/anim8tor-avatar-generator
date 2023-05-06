@@ -22,7 +22,7 @@ export default function List(props) {
       setAvatar((prevAvatar) =>
         prevAvatar.map((avatar) =>
           avatar._id === id ? { ...avatar, likes: updatedAvatar.likes } : avatar
-        )
+        ).sort((a, b) => b.likes - a.likes)
       );
     } catch (error) {
       console.error(error);

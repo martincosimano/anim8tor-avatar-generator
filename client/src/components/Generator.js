@@ -59,7 +59,7 @@ function handleIncrement() {
 
 return (
     <div className="generator--container">
-        <img alt=" " src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
+        <img alt="avatar icon" src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
             <form onSubmit={handleSubmit}>
                 <input className="avatarName--input"
                         type="text"
@@ -67,6 +67,7 @@ return (
                         name="avatarName"
                         value={avatar.avatarName}
                         onChange={generateAvatar}
+                        maxLength={14}
                 />
                 <div className="form--buttons">
                     <button onClick={handleIncrement} className="heart--button"><i className="fa-solid fa-heart"></i></button>
