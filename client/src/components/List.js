@@ -6,7 +6,7 @@ export default function List(props) {
 
   React.useEffect(() => {
     async function getAvatar() {
-      const res = await fetch(`/avatars`);
+      const res = await fetch(`/getAllAvatars`);
       const data = await res.json();
       setAvatar(data);
     }

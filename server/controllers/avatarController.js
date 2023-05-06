@@ -1,4 +1,4 @@
-const Avatar = require("../models/avatar");
+const Avatar = require("../models/avatarModel");
 
 const getAllAvatars = async(req,res) => {
     try {
