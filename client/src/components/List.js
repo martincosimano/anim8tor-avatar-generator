@@ -47,7 +47,7 @@ export default function List(props) {
 
   const avatarElement = avatar.map((avatar) => (
     <p className="avatar--p" key={avatar._id}>
-      <a href={avatar.avatarSrc}><img className="avatar--icon" src={avatar.avatarSrc} alt="avatar icon" /></a>
+      <a href={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`}><img className="avatar--icon" src={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`} alt="avatar icon" /></a>
       <span className="avatar--name">{avatar.avatarName}</span>
       <span className="avatar--likes">{avatar.likes}</span>
       <span className="avatar--buttons">
@@ -60,7 +60,7 @@ export default function List(props) {
       </span>
     </p>
   ));
-
+  
   return (
     <div className="list">
       <h2 className="list--title">Favorite Avatars</h2>

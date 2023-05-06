@@ -1,27 +1,27 @@
 .list {
     padding-bottom: 8rem;
-}
-
-.container {
+  }
+  
+  .container {
     display: flex;
     justify-content: center;
-}
-
-.list--title {
+  }
+  
+  .list--title {
     text-align: center;
-}
-
-ul {
+  }
+  
+  ul {
     margin-bottom: 0;
     padding-left: 0;
-}
-
-.list--avatar {
+  }
+  
+  .list--avatar {
     text-align: center;
     list-style: none;
-}
-
-.list--container {
+  }
+  
+  .list--container {
     border: 2px solid rgb(102, 102, 102);
     background-color: rgb(221, 221, 221);
     box-shadow: 12px 12px 2px 1px rgb(199, 199, 199);
@@ -30,42 +30,46 @@ ul {
     opacity: 0.9;
     border-radius: 0.5rem;
     margin-inline: 2rem;
-}
-
-.fa-thumbs-up {
+  }
+  
+  .fa-thumbs-up {
     color: rgb(33, 33, 151);
-}
-
-button:hover {
+  }
+  
+  button:hover {
     cursor: pointer;
-}
-
-
-.avatar--p {
+  }
+  
+  .avatar--p {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(102, 102, 102);
     margin-bottom: 0;
     padding-bottom: 0.5rem;
-    padding-inline: 1rem;
-}
-  
-.avatar--name {
-    flex: 1;
-    width: 100%;
-}
-  
-.avatar--likes {
-    width: 30px;
+    padding-left: 1rem;
+    padding-right: 0rem;
+    text-align: center;
   }
   
-.avatar--buttons {
+  .avatar--name {
+    flex: 1;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 1.9rem;
+  }
+  
+  .avatar--likes {
+    width: 1.875rem;
+  }
+  
+  .avatar--buttons {
     display: flex;
     gap: 0.3rem;
-}
-
-.avatar--icon {
-    width: 35px;
-    margin-left: 2.5rem;
-}
+    margin-right: 1rem;
+  }
+  
+  .avatar--icon {
+    width: 2.188rem;
+    margin-right: 1rem;
+  }
