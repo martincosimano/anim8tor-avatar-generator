@@ -15,5 +15,5 @@ app.use(bodyParser.json());
 app.use("/", avatarRoutes);
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8888;
 app.listen(PORT, () => `Server running on port ${PORT}`);
