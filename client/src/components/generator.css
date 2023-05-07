@@ -32,8 +32,7 @@
     padding-block: 0.5rem;
 }
 
-.heart--button {
-    color: #ED4956;
+.form-button {
     font-size: 1.1rem;
     padding-inline: 1rem;
     padding-block: 0.5rem;
@@ -41,7 +40,11 @@
     margin-top: 1rem;
 }
 
-.heart--button:hover {
+.heart--button {
+    color: #ED4956;
+}
+
+.button:hover {
     cursor: pointer;
 }
 

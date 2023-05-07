@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header'
 import Generator from './components/Generator'
 import List from './components/List'
+import Footer from './components/Footer'
 
 export default function App() {
   const [count, setCount] = React.useState(0);
@@ -14,6 +15,7 @@ export default function App() {
       <Header />
       <Generator count={count} onIncrement={incrementCount} />
       <List count={count} />
+      <Footer />
     </main>
   )
 }

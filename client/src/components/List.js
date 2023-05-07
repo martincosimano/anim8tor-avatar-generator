@@ -8,7 +8,8 @@ export default function List(props) {
     async function getAvatar() {
       const res = await fetch(`/getAllAvatars`);
       const data = await res.json();
-      setAvatar(data);
+      const sortedData = data.sort((a, b) => b.likes - a.likes);
+      setAvatar(sortedData);
     }
     getAvatar();
   }, [props.count]);

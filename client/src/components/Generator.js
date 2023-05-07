@@ -68,7 +68,7 @@ export default function Generator(props) {
           maxLength={14}
         />
         <div className="form--buttons">
-          <button onClick={handleIncrement} className="heart--button"><i className="fa-solid fa-heart"></i></button>
+          <button onClick={handleIncrement} className="form-button heart--button"><i className="fa-solid fa-heart"></i></button>
         </div>
       </form>
       {errorMessage && <p className="error">{errorMessage}</p>}
