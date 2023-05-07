@@ -4,6 +4,7 @@
   "description": "Animated avatar generator app",
   "main": "server.js",
   "scripts": {
+    "full-install": "npm install && cd ../client && npm install",
     "client-install": "cd ../client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
