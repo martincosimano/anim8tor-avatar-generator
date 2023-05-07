@@ -48,3 +48,12 @@
 .fa-heart {
     text-shadow: 1px 1px 1px black;
 }
+
+.error {
+    background-color: #ffc7c7;
+    border: 1px solid #ff7878;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 10px;
+  }

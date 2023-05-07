@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const connectDB = require('./config/db');
 
 const avatarRoutes = require("./routes/avatarRoutes");

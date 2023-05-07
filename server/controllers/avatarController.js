@@ -10,16 +10,22 @@ const getAllAvatars = async(req,res) => {
     }
 };
 
-const addAvatar = async(req, res) => {
-  const { avatarName } = req.body;
-  try {
+const addAvatar = async (req, res) => {
+    const { avatarName } = req.body;
+    try {
+      const existingAvatar = await Avatar.findOne({ avatarName });
+      if (existingAvatar) {
+        res.status(400).json({ error: 'Avatar already exists' });
+        return;
+      }
       const avatar = new Avatar({ avatarName, likes: 0 });
       await avatar.save();
       res.status(200).json({ message: 'Avatar saved successfully' });
-  } catch (error) {
+    } catch (error) {
+      console.error(error);
       res.status(500).send(error);
-  }
-};
+    }
+  };
 
 
 const likeAvatar = async (req, res) => {
