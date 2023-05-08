@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const avatarController = require("../controllers/avatarController")
+const avatarController = require("../controllers/avatarController");
+const cors = require("cors");
+
+router.use(cors());
 
 router.get("/getAllAvatars", avatarController.getAllAvatars);
 router.post("/addAvatar", avatarController.addAvatar);

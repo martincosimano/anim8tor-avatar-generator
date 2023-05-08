@@ -13,7 +13,6 @@ export default function List(props) {
         },
       });
       const data = await res.json();
-      console.log(data); // add this line
       const sortedData = data.sort((a, b) => b.likes - a.likes);
       setAvatar(sortedData);
     }
