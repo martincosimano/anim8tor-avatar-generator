@@ -4,7 +4,7 @@ import './header.css'
 export default function Header() {
     return (
         <header>
-            <h1 className="title">Animated Avatar Generator</h1>
+            <h1 className="title">Avatar Creator</h1>
         </header>
     )
 }
