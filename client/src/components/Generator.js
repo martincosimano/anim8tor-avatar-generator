@@ -31,7 +31,7 @@ export default function Generator(props) {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const res = await fetch('https://animated-avatar-generator.onrender.com/addAvatar', {
+      const res = await fetch('/addAvatar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
