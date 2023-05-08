@@ -57,7 +57,7 @@ export default function Generator(props) {
 
   return (
     <div className="generator--container">
-      <img alt="avatar icon" src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
+      <img alt="" src={avatar.avatarName ? avatarSrc : require("../images/questionmark.png")} className="avatar--image"></img>
       <form onSubmit={handleSubmit}>
         <input
           className="avatarName--input"
