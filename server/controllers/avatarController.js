@@ -25,7 +25,7 @@ const addAvatar = async (req, res) => {
       console.error(error);
       res.status(500).send(error);
     }
-  };
+};
 
 
 const likeAvatar = async (req, res) => {
