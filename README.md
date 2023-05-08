@@ -1,6 +1,6 @@
 # Animated Avatar Generator App
 
-Web-based application that utilizes the MultiAvatar API to create animated avatars based on user input. Along with the customization options, the app also features a "heart" button that allows users to save their favorite avatars to a list for later use. The application is easily accessible through any web browser, making it a fun and convenient tool for creating unique avatars.
+Web-based application that utilizes the MultiAvatar API to create animated avatars based on user input. The app also features a "heart" button that allows users to save their favorite avatars to a list where they can upvote or delete them.
 
 
 ![image](https://user-images.githubusercontent.com/103332504/236951137-872d38d9-7630-4cc1-b90b-e2af29ca7b2f.png)
