@@ -6,7 +6,7 @@ export default function List(props) {
 
   React.useEffect(() => {
     async function getAvatar() {
-      const res = await fetch(`https://animated-avatar-generator.onrender.com/getAllAvatars`, {
+      const res = await fetch(`/getAllAvatars`, {
         credentials: 'omit',
         headers: {
           'Content-Type': 'application/json'
