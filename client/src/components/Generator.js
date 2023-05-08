@@ -36,6 +36,7 @@ export default function Generator(props) {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'omit',
         body: JSON.stringify({ avatarName: avatar.avatarName }),
       });
       const data = await res.json();

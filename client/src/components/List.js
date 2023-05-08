@@ -6,7 +6,12 @@ export default function List(props) {
 
   React.useEffect(() => {
     async function getAvatar() {
-      const res = await fetch(`/getAllAvatars`);
+      const res = await fetch(`/getAllAvatars`, {
+        credentials: 'omit',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
       const data = await res.json();
       const sortedData = data.sort((a, b) => b.likes - a.likes);
       setAvatar(sortedData);
@@ -18,6 +23,7 @@ export default function List(props) {
     try {
       const res = await fetch(`/likeAvatar/${id}`, {
         method: "PUT",
+        credentials: 'omit',
       });
       const updatedAvatar = await res.json();
       setAvatar((prevAvatar) =>
@@ -34,6 +40,7 @@ export default function List(props) {
     try {
       const res = await fetch(`/deleteAvatar/${id}` , {
         method: "DELETE",
+        credentials: 'omit',
       });
       if (res.ok) {
         setAvatar(avatar.filter((avatar) => avatar._id !== id));
