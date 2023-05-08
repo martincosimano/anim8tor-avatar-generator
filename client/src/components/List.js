@@ -6,7 +6,7 @@ export default function List(props) {
 
   React.useEffect(() => {
     async function getAvatar() {
-      const res = await fetch(`/getAllAvatars`, {
+      const res = await fetch(`https://animated-avatar-generator.onrender.com/getAllAvatars`, {
         credentials: 'omit',
         headers: {
           'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ export default function List(props) {
 
   const handleLike = async(id) => {
     try {
-      const res = await fetch(`/likeAvatar/${id}`, {
+      const res = await fetch(`https://animated-avatar-generator.onrender.com/likeAvatar/${id}`, {
         method: "PUT",
         credentials: 'omit',
       });
@@ -38,7 +38,7 @@ export default function List(props) {
 
   const handleDelete = async(id) => {
     try {
-      const res = await fetch(`/deleteAvatar/${id}` , {
+      const res = await fetch(`https://animated-avatar-generator.onrender.com/deleteAvatar/${id}` , {
         method: "DELETE",
         credentials: 'omit',
       });
