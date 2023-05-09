@@ -55,21 +55,25 @@ export default function List(props) {
     }
   }
 
-  const avatarList = avatar.slice(0, visibleCount).map((avatar) => (
-    <p className="avatar--p" key={avatar._id}>
-      <a href={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`}><img className="avatar--icon" src={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`} alt="avatar icon" /></a>
-      <span className="avatar--name">{avatar.avatarName}</span>
-      <span className="avatar--likes">{avatar.likes}</span>
-      <span className="avatar--buttons">
-        <button onClick={() => handleLike(avatar._id)}>
-          <i id="likes" className="fa-regular fa-thumbs-up"></i>
-        </button>
-        <button onClick={() => handleDelete(avatar._id)}>
-          <i id="trash" className="fa-solid fa-trash"></i>
-        </button>
-      </span>
-    </p>
-  ));
+  const avatarList = avatar.length === 0 ? (
+    <p className="notfound">No avatars found</p>
+  ) : (
+    avatar.slice(0, visibleCount).map((avatar) => (
+      <p className="avatar--p" key={avatar._id}>
+        <a href={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`}><img className="avatar--icon" src={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`} alt="avatar icon" /></a>
+        <span className="avatar--name">{avatar.avatarName}</span>
+        <span className="avatar--likes">{avatar.likes}</span>
+        <span className="avatar--buttons">
+          <button onClick={() => handleLike(avatar._id)}>
+            <i id="likes" className="fa-regular fa-thumbs-up"></i>
+          </button>
+          <button onClick={() => handleDelete(avatar._id)}>
+            <i id="trash" className="fa-solid fa-trash"></i>
+          </button>
+        </span>
+      </p>
+    ))
+  );
 
   const handleShowMore = () => {
     setVisibleCount(visibleCount + 2);
@@ -78,25 +82,25 @@ export default function List(props) {
 
   return (
     <div className="list">
-    <h2 className="list--title">Favorite Avatars</h2>
-    <div className="container">
-    <div className="list--container">
-    {loading ? (
-    <div className="loading">
-    <p>Loading <i class="fa-solid fa-spinner fa-spin"></i></p>
+      <h2 className="list--title">Favorite Avatars</h2>
+      <div className="container">
+        <div className="list--container">
+          {loading ? (
+            <div className="loading">
+              <p>Loading <i className="fa-solid fa-spinner fa-spin"></i></p>
+            </div>
+          ) : (
+        <div>
+          {avatarList}
+          {avatar.length > visibleCount && (
+          <div className="showmore--container">
+            <button className="showmore" onClick={handleShowMore}><i className="fa-solid fa-sort-down fa-bounce"></i></button>
+          </div>
+          )}
+          </div>
+          )}
+        </div>
+      </div>
     </div>
-    ) : (
-    <div>
-    {avatarList}
-    {avatar.length > visibleCount && (
-    <div className="showmore--container">
-    <button className="showmore" onClick={handleShowMore}><i class="fa-solid fa-sort-down fa-bounce"></i></button>
-    </div>
-    )}
-    </div>
-    )}
-    </div>
-    </div>
-    </div>
-    );
-    }
+  );
+}

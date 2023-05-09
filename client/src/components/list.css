@@ -32,7 +32,7 @@ ul {
   border: 2px solid #666666;
   background-color: #dddddd;
   box-shadow: 0.75rem 0.75rem 0.125rem 0.063rem #c7c7c7;
-  min-height: 12.5rem;
+  min-height: 13.7rem;
   width: 28rem;
   opacity: 0.9;
   border-radius: 0.5rem;
@@ -91,13 +91,8 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12.5rem;
+  height: 13.7rem;
   margin-block: 0;
-}
-
-.notfound {
-  height: 10rem;
-  margin: 0;
 }
 
 .showmore--container {
