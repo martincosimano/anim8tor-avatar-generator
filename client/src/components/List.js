@@ -4,6 +4,7 @@ import './list.css';
 export default function List(props) {
   const [avatar, setAvatar] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [visibleCount, setVisibleCount] = React.useState(3);
 
   React.useEffect(() => {
     async function getAvatar() {
@@ -54,7 +55,7 @@ export default function List(props) {
     }
   }
 
-  const avatarElement = avatar.length > 0 ? avatar.map((avatar) => (
+  const avatarList = avatar.slice(0, visibleCount).map((avatar) => (
     <p className="avatar--p" key={avatar._id}>
       <a href={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`}><img className="avatar--icon" src={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`} alt="avatar icon" /></a>
       <span className="avatar--name">{avatar.avatarName}</span>
@@ -68,26 +69,34 @@ export default function List(props) {
         </button>
       </span>
     </p>
-  )) :  <p className="notfound">No avatars found</p>
+  ));
+
+  const handleShowMore = () => {
+    setVisibleCount(visibleCount + 2);
+  };
+
 
   return (
     <div className="list">
-      <h2 className="list--title">Favorite Avatars</h2>
-      <div className="container">
-        <div className="list--container">
-          {loading ? (
-            <div className="loading">
-              <p>Loading <i class="fa-solid fa-spinner fa-spin"></i></p>
-            </div>
-          ) : (
-            <ul>
-              <li className="list--avatar">
-                {avatarElement}
-              </li>
-            </ul>
-          )}
-        </div>
-      </div>
+    <h2 className="list--title">Favorite Avatars</h2>
+    <div className="container">
+    <div className="list--container">
+    {loading ? (
+    <div className="loading">
+    <p>Loading <i class="fa-solid fa-spinner fa-spin"></i></p>
     </div>
-  );
-}
+    ) : (
+    <div>
+    {avatarList}
+    {avatar.length > visibleCount && (
+    <div className="showmore--container">
+    <button className="showmore" onClick={handleShowMore}><i class="fa-solid fa-sort-down fa-bounce"></i></button>
+    </div>
+    )}
+    </div>
+    )}
+    </div>
+    </div>
+    </div>
+    );
+    }
