@@ -3,6 +3,7 @@ import './list.css';
 
 export default function List(props) {
   const [avatar, setAvatar] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function getAvatar() {
@@ -15,6 +16,7 @@ export default function List(props) {
       const data = await res.json();
       const sortedData = data.sort((a, b) => b.likes - a.likes);
       setAvatar(sortedData);
+      setLoading(false);
     }
     getAvatar();
   }, [props.count]);
@@ -52,8 +54,7 @@ export default function List(props) {
     }
   }
 
-
-  const avatarElement = avatar.map((avatar) => (
+  const avatarElement = avatar.length > 0 ? avatar.map((avatar) => (
     <p className="avatar--p" key={avatar._id}>
       <a href={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`}><img className="avatar--icon" src={`https://api.multiavatar.com/${avatar.avatarName}.png?apikey=dr6RpJefscNoOa`} alt="avatar icon" /></a>
       <span className="avatar--name">{avatar.avatarName}</span>
@@ -67,18 +68,24 @@ export default function List(props) {
         </button>
       </span>
     </p>
-  ));
-  
+  )) :  <p className="notfound">No avatars found</p>
+
   return (
     <div className="list">
       <h2 className="list--title">Favorite Avatars</h2>
       <div className="container">
         <div className="list--container">
-          <ul>
-            <li className="list--avatar">
-              {avatarElement}
-            </li>
-          </ul>
+          {loading ? (
+            <div className="loading">
+              <p>Loading <i class="fa-solid fa-spinner fa-spin"></i></p>
+            </div>
+          ) : (
+            <ul>
+              <li className="list--avatar">
+                {avatarElement}
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </div>

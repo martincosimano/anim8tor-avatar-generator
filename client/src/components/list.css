@@ -1,82 +1,96 @@
 .list {
-    padding-top: 3rem;
-    padding-bottom: 8rem;
-  }
+  padding-top: 3rem;
+  padding-bottom: 8rem;
+}
   
-  .container {
-    display: flex;
-    justify-content: center;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+}
   
-  .list--title {
-    font-size: 1.5rem;
-    color: #181818;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2rem;
-    letter-spacing: 0.1rem;
-    text-shadow: 0.313rem 0.313rem #e2e2e2;
-  }
+.list--title {
+  font-size: 1.5rem;
+  color: #181818;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  letter-spacing: 0.1rem;
+  text-shadow: 0.313rem 0.313rem #e2e2e2;
+}
   
-  ul {
-    margin-bottom: 0;
-    padding-left: 0;
-  }
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
   
-  .list--avatar {
-    text-align: center;
-    list-style: none;
-  }
+.list--avatar {
+  text-align: center;
+  list-style: none;
+}
   
-  .list--container {
-    border: 2px solid rgb(102, 102, 102);
-    background-color: rgb(221, 221, 221);
-    box-shadow: 0.75rem 0.75rem 0.125rem 0.063rem #c7c7c7;
-    min-height: 12.5rem;
-    width: 28rem;
-    opacity: 0.9;
-    border-radius: 0.5rem;
-    margin-inline: 2rem;
-  }
+.list--container {
+  border: 2px solid rgb(102, 102, 102);
+  background-color: rgb(221, 221, 221);
+  box-shadow: 0.75rem 0.75rem 0.125rem 0.063rem #c7c7c7;
+  min-height: 12.5rem;
+  width: 28rem;
+  opacity: 0.9;
+  border-radius: 0.5rem;
+  margin-inline: 2rem;
+}
   
-  .fa-thumbs-up {
-    color: #212197;
-  }
+.fa-thumbs-up {
+  color: #212197;
+}
   
-  button:hover {
-    cursor: pointer;
-  }
+button:hover {
+  cursor: pointer;
+}
   
-  .avatar--p {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 0.063rem solid #666666;
-    margin-bottom: 0;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 0;
-    text-align: center;
-  }
+.avatar--p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.063rem solid #666666;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 0;
+  text-align: center;
+}
   
-  .avatar--name {
-    flex: 1;
-    text-align: center;
-    margin: 0 auto;
-    margin-left: 1.9rem;
-  }
+.avatar--name {
+  flex: 1;
+  text-align: center;
+  margin: 0 auto;
+  margin-left: 1.9rem;
+}
   
-  .avatar--likes {
-    width: 1.875rem;
-  }
+.avatar--likes {
+  width: 1.875rem;
+}
   
-  .avatar--buttons {
-    display: flex;
-    gap: 0.3rem;
-    margin-right: 1rem;
-  }
+.avatar--buttons {
+  display: flex;
+  gap: 0.3rem;
+  margin-right: 1rem;
+}
   
-  .avatar--icon {
-    width: 2.188rem;
-    margin-right: 1rem;
-  }
+.avatar--icon {
+  width: 2.188rem;
+  margin-right: 1rem;
+}
+
+.loading,
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12.5rem;
+  margin-block: 0;
+}
+
+.notfound {
+  height: 10rem;
+  margin: 0;
+}
