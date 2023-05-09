@@ -29,8 +29,8 @@ ul {
 }
   
 .list--container {
-  border: 2px solid rgb(102, 102, 102);
-  background-color: rgb(221, 221, 221);
+  border: 2px solid #666666;
+  background-color: #dddddd;
   box-shadow: 0.75rem 0.75rem 0.125rem 0.063rem #c7c7c7;
   min-height: 12.5rem;
   width: 28rem;
@@ -41,6 +41,10 @@ ul {
   
 .fa-thumbs-up {
   color: #212197;
+}
+
+.fa-trash {
+  color: #181818;
 }
   
 button:hover {
