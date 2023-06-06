@@ -3,7 +3,8 @@
 Web-based application that utilizes the MultiAvatar API to create animated avatars based on user input. The app also features a "heart" button that allows users to save their favorite avatars to a list where they can upvote or delete them.
 
 
-![image](https://github.com/martincosimano/react-animated-avatar-generator/assets/103332504/8935c564-d9ea-4beb-9210-88378197ff04)
+![image]![image](https://github.com/martincosimano/anim8tor-avatar-generator/assets/103332504/e5c8cf13-34b1-4b4f-a02d-944c320ccdcb)
+
 
 
 Link to the site: https://anim8tor.vercel.app/
