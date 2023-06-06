@@ -1,4 +1,4 @@
-# Animated Avatar Generator App
+# Anim8tor: Avatar Generator App
 
 Web-based application that utilizes the MultiAvatar API to create animated avatars based on user input. The app also features a "heart" button that allows users to save their favorite avatars to a list where they can upvote or delete them.
 
